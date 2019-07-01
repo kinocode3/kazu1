@@ -1,0 +1,27 @@
+<p>ここは本を編集するページです。</p>
+
+<%= form_for(@book)do |f| %>
+
+ <div class="f.submit">
+  <%= f.label :タイトル %><br>
+  <%= f.text_field :name %>
+ </div>
+ <div class="f.submit">
+  <%= f.label :読んだ本 %><br>
+  <%= f.text_field :name %>
+ </div>
+  <div class="f.submit">
+  <%= f.label :評価（☆マーク） %><br>
+  <%= f.text_field :name %>
+ </div>
+ <div class="f.submit">
+  <%= f.label :感想 %><br>
+  <%= f.text_area :impression, cols: 40, rows: 20%>
+ </div>
+
+ <div class="actions">
+  <%= f.submit '編集する'%>
+ </div>
+<% end %>
+<%= link_to'編集せずに戻る',books_path,target: "_brank" %>
+<%=button_to'削除',book_path(id: @book.id),method: :delete,data: { confirm: '本当に削除しますか?'}%>

@@ -1,0 +1,16 @@
+<p id="notice"><%= flash[:notice] %></p>
+<h1><span class="glyphicon glyphicon-book" aria-hidden="true"></span>童話ブック</h1>
+<p>読んだ本をまとめるサイトです。</p>
+<p>詳しい情報は名前をクリックしてください。</p>
+<%= link_to'新しい本を登録する',new_book_path,target: "_brank" %>
+<div class='row'>
+   <% for b in @books %>
+      <%@book_No = @book_No+1%>
+       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+         <h4>No.<%=@book_No%> : <%= b.name%></h4>
+         <p>登録日<%= b.created_at%></p>
+         <p>最終更新日<%= b.updated_at%></p>
+         <%= link_to 'くわしく見る', book_path(id: b.id,book_id: @book_No),target: "_brank" %>
+       </div>
+     <% end %>
+</div>

@@ -1,0 +1,7 @@
+<h1><%= @book.name %></h1>
+<p>No：<%= @book_No %></p>
+<p>読んだ日：<%= @book.date %></p>
+<p>評価：<%= @book.star %></p>
+<p>感想：<%= @book.impression %></p>
+<%= link_to'トップに戻る',books_path,target: "_brank" %>
+<%= link_to'内容を変更する',edit_book_path(id: @book.id),target: "_brank" %>

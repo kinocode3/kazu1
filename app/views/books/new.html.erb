@@ -1,0 +1,26 @@
+<p>ここは本を登録するページです。</p>
+
+<%= form_for(@book)do |f| %>
+
+ <div class="field">
+  <%= f.label :タイトル %><br>
+  <%= f.text_field :name %>
+ </div>
+ <div class="field">
+  <%= f.label :読んだ本 %><br>
+  <%= f.text_field :date %>
+ </div>
+ <div class="field">
+  <%= f.label :評価（☆マーク） %><br>
+  <%= f.text_field :star %>
+ </div>
+ <div class="field">
+  <%= f.label :感想 %><br>
+  <%= f.text_area :impression, cols: 40, rows: 20%>
+ </div>
+
+ <div class="actions">
+  <%= f.submit '登録' %>
+ </div>
+<% end %>
+<%= link_to'トップに戻る',books_path,target: "_brank" %>
